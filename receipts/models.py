@@ -19,6 +19,7 @@ class Receipt(models.Model):
     total = models.DecimalField(max_digits=10, decimal_places=3)
     tax = models.DecimalField(max_digits=10, decimal_places=3)
     date = models.DateTimeField()
+
     purchaser = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name="receipts",
