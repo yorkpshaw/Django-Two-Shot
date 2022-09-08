@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from receipts.models import Receipt
+from django.views.generic.base import RedirectView
 
 
 class ReceiptListView(ListView):
