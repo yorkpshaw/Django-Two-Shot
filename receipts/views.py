@@ -55,3 +55,16 @@ class ExpenseCategoryCreateView(LoginRequiredMixin, CreateView):
         item.owner = self.request.user
         item.save()
         return redirect("list_categories")
+
+
+class AccountCreateView(CreateView):
+    model = Account
+    template_name = "accounts/create.html"
+    fields = ["name", "number"]
+    context_object_name = "createaccount"
+
+    def form_valid(self, form):
+        item = form.save(commit=False)
+        item.owner = self.request.user
+        item.save()
+        return redirect("list_accounts")
